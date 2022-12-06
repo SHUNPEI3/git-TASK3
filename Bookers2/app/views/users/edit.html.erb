@@ -1,9 +1,7 @@
 <div class="container my-3">
   <div class="row justify-content-center">
     <div class="col-md-5">
-
-<h2>User info</h2>
-
+      <h2>User info</h2>
 <!----------------------バリデーションエラー表示---------------------->
 <% if @user.errors.any? %>
   <h3><%= @user.errors.count %> errors prohibited this obj from being saved:</h3>
@@ -14,19 +12,15 @@
     </ul>
 <% end %>
 <!-------------------------------------------------------------------->
-
-  <%= form_with model:@user, method: :patch do |f| %>
-
-    <p>Name</p>
-    <%= f.text_field:name, class:"form-control" %><br>
-    <p>Image</p>
-    <%= f.file_field:profile_image,accept:"image/*" %><br><br
-    <p>Introduction</p>
-    <%= f.text_area:introduction, class:"form-control" %><br>
-    <%= f.submit 'Update User',class: "btn btn-secondary" %>
-
-  <% end %>
-
+      <%= form_with model:@user, method: :patch do |f| %>
+        <p>Name</p>
+        <%= f.text_field:name, class:"form-control" %><br>
+        <p>Image</p>
+        <%= f.file_field:profile_image,accept:"image/*" %><br><br>
+        <p>Introduction</p>
+        <%= f.text_area:introduction, class:"form-control" %><br>
+        <%= f.submit 'Update User',class: "btn btn-secondary" %>
+      <% end %>
     </div>
   </div>
 </div>
